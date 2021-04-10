@@ -82,7 +82,7 @@ monitor = ${env:MONITOR}
 ```
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    MONITOR=$m polybar --reload makc &
+    MONITOR=$m polybar --reload NAMEOFBAR &
   done
 else
   polybar --reload NAMEOFBAR &
