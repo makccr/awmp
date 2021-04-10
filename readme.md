@@ -19,7 +19,7 @@ This is a module for polybar that adds a sort of a tag-list switcher to your pol
 </p>
 
 ## Usage
-Simply add the following to your polybar modules list, in whatever position and/or order you prefer. Options are ``modules-left``, ``modules-center``, or ``modules-right``. I keep mine in the center.
+Simply add the following to your polybar modules list, in whatever position and/or order you prefer. Options are ``modules-left =``, ``modules-center =``, or ``modules-right =``. I keep mine in the center.
 
 ``1 2 3 4 5 6 7 8 9``
 
