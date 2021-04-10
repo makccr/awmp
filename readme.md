@@ -64,7 +64,32 @@ click-left = "xdotool key --clearmodifiers Super_L+9"
 ```
 A sample polybar config with the modules in work can be viewed [here](https://github.com/makccr/dot/blob/bc16321907a06fcfcbec530cea4956945ed90ad2/.config/polybar/config).
 
-### Customization
+### Configuring Icons
 By default the module will exist as a line of numbers on your bar that will switch tags on click. In order to customize the icons displayed in the bar, you need to change the output for each of the nine modules. For example, changing ``exec = echo "1"`` to ``exec = echo "•"``, will display a neat, non-numbered row of dots on the bar that have the same functionality; not dissimilar to the sample image provided in this readme.
 
 Additionally, you can use the [``gucharmap``](https://wiki.gnome.org/action/show/Apps/Gucharmap?action=show&redirect=Gucharmap) program to find a more extensive selection of icons to use in tandem with this module.
+
+### Multi-monitor polybar
+Something like this works best when your polybar is displayed on all monitors, as the tag switcher will only change tags on the monitor that is active when the icon is pressed. You could build separate polybars for all of your monitors, as many often do, but I have a solution to simply display the same polybar on all connected monitors:
+
+1. In your main polybar config, ``${XDG_CONFIG_HOME}/polybar/config`` / ``~/.config/polybar/config``, add the following under monitor settings:
+```
+monitor = ${env:MONITOR}
+```
+
+2. In your launch script for starting polybar, usually: ``${XDG_CONFIG_HOME}/polybar/launch.sh`` / ``~/.config/polybar/launch.sh``, add the following to the bottom of the script, replacing ``NAMEOFBAR``, with whatever you named your bar, in your polybar config.
+
+```
+if type "xrandr"; then
+  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    MONITOR=$m polybar --reload makc &
+  done
+else
+  polybar --reload NAMEOFBAR &
+fi
+```
+
+An example of both configurations in my personal polybar config, can be found [here](https://github.com/makccr/dot/tree/5407f540280be4bed3bc2a542b541ca6e20f7df4/.config/polybar).
+
+## Development
+I am hyper aware that this is, to say the least, a feature-lacking, and sloppy version of what the small group of people wanting a module like this are after. The eventual plan would be to build a proper lua script to more properly enable the desired functionality, and then find a way to integrate it as a proper polybar module. I just haven't found the time to look into doing that yet.  In the mean time, feel free to submit any pull requests that might improve this project in it's current state.
