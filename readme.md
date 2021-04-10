@@ -7,3 +7,5 @@ This is a module for polybar that adds a sort of a tag-list switcher to your pol
 * Awesome WM
 * Polybar
 * ``xdotool``, is the thing that actually makes this work. I think I can safely assume everyone interested already has Awesome & Polybar installed.
+
+[![Sample]()]()
