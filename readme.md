@@ -89,7 +89,10 @@ else
 fi
 ```
 
-An example of both configurations in my personal polybar config, can be found [here](https://github.com/makccr/dot/tree/5407f540280be4bed3bc2a542b541ca6e20f7df4/.config/polybar).
+An example of both configurations in my personal polybar config, can be found [here](https://github.com/makccr/dot/tree/5407f540280be4bed3bc2a542b541ca6e20f7df4/.config/polybar). If you have any additional questions, I've made a slightly in-depth video about the creation and usage of this module: 
+
+[![Tag Module](https://img.youtube.com/vi/pPoMDfcSdU4/maxresdefault.jpg)](https://youtu.be/pPoMDfcSdU4)
+
 
 ## Development
 I am hyper aware that this is, to say the least, a feature-lacking, and sloppy version of what the small group of people wanting a module like this are after. The eventual plan would be to build a proper lua script to more properly enable the desired functionality, and then find a way to integrate it as a proper polybar module. I just haven't found the time to look into doing that yet.  In the mean time, feel free to submit any pull requests that might improve this project in it's current state.
