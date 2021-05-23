@@ -2,7 +2,6 @@
     <img src="https://makccr.github.io/images/github-header.svg" alt="MAKC lgoo" title="MAKC" align="right" height="60" />
 </a>
 
-
 # Awesome WM Tag Switcher Polybar Module
 This is a module for polybar that adds a sort of a tag-list switcher to your polybar.
 
