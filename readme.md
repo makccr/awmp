@@ -96,5 +96,7 @@ An example of both configurations in my personal polybar config, can be found [h
 [![Tag Module](https://img.youtube.com/vi/pPoMDfcSdU4/maxresdefault.jpg)](https://youtu.be/pPoMDfcSdU4)
 
 
-## Development
+## Development & A Note On [Xworkspaces](https://github.com/polybar/polybar/wiki/Module:-xworkspaces) Polybar Module
+There is an existing tool in Polybar that enables exactly what I'm trying to achieve here without the wacky work-around. However, it's not very well developed with the AwesomeWM, and is kind of unusable with a multi-monitor set-up. I very well may switch to the xworkspaces polybar module when/if it's issues are fixed. But until then, I plan to keep improving this set-up to achieve the results I desire.
+
 I am hyper aware that this is, to say the least, a feature-lacking, and sloppy version of what the small group of people wanting a module like this are after. The eventual plan would be to build a proper lua script to more properly enable the desired functionality, and then find a way to integrate it as a proper polybar module. I just haven't found the time to look into doing that yet.  In the mean time, feel free to submit any pull requests that might improve this project in it's current state.
