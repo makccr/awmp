@@ -26,7 +26,7 @@ Simply add the following to your polybar modules list, in whatever position and/
 ``1 2 3 4 5 6 7 8 9``
 
 Then at the bottom of your polybar config, paste in the following new modules:
-```
+```ini
 [module/1]
 type = custom/script
 exec = echo "1"
@@ -75,13 +75,13 @@ Additionally, you can use the [``gucharmap``](https://wiki.gnome.org/action/show
 Something like this works best when your polybar is displayed on all monitors, as the tag switcher will only change tags on the monitor that is active when the icon is pressed. You could build separate polybars for all of your monitors, as many often do, but I have a solution to simply display the same polybar on all connected monitors:
 
 1. In your main polybar config, ``${XDG_CONFIG_HOME}/polybar/config`` / ``~/.config/polybar/config``, add the following under monitor settings:
-```
+```ini
 monitor = ${env:MONITOR}
 ```
 
 2. In your launch script for starting polybar, usually: ``${XDG_CONFIG_HOME}/polybar/launch.sh`` / ``~/.config/polybar/launch.sh``, add the following to the bottom of the script, replacing ``NAMEOFBAR``, with whatever you named your bar, in your polybar config.
 
-```
+```sh
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
     MONITOR=$m polybar --reload NAMEOFBAR &
